@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import gestion.Zona;
 
 public class Anfibio extends Animal{
-	private static ArrayList<Anfibio> listado;
+	private static ArrayList<Anfibio> listado = new ArrayList<>();
 	public static int ranas = 0;
 	public static int salamandras = 0;
 	private String colorPiel;
@@ -11,7 +11,6 @@ public class Anfibio extends Animal{
 	
 	public Anfibio() {
 		this(null, 0, null, null, null, false);
-		listado.add(this);
 	}
 	
 	public Anfibio(String nombre) {

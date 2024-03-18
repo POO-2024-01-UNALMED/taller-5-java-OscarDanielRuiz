@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import gestion.Zona;
 
 public class Reptil extends Animal{
-	private static ArrayList<Reptil> listado;
+	private static ArrayList<Reptil> listado = new ArrayList<>();
 	public static int iguanas = 0;
 	public static int serpientes = 0;
 	private String colorEscamas;
@@ -11,7 +11,6 @@ public class Reptil extends Animal{
 	
 	public Reptil() {
 		this(null, 0, null, null, null, 0);
-		listado.add(this);
 	}
 	
 	public Reptil(String nombre) {

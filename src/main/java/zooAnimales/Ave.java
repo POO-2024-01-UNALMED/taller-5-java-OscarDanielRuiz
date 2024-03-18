@@ -3,14 +3,13 @@ import java.util.ArrayList;
 import gestion.Zona;
 
 public class Ave extends Animal{
-	private static ArrayList<Ave> listado;
+	private static ArrayList<Ave> listado = new ArrayList<>();
 	public static int halcones = 0;
 	public static int aguilas = 0;
 	private String colorPlumas;
 	
 	public Ave() {
 		this(null, 0, null, null, null);
-		listado.add(this);
 	}
 	
 	public Ave(String nombre) {
