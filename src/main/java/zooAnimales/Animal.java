@@ -7,7 +7,7 @@ public class Animal {
 	private int edad;
 	private String habitat;
 	private String genero;
-	private Zona[] zona;
+	private Zona zona;
 	
 	public Animal() {
 		totalAnimales++;
@@ -44,8 +44,7 @@ public class Animal {
 		this.edad = edad;
 		this.habitat = habitat;
 		this.genero = genero;
-		this.zona = new Zona[1];
-		this.zona[0] = zona;
+		this.zona = zona;
 		totalAnimales++;
 	}
 	
@@ -55,19 +54,21 @@ public class Animal {
 	}
 	
 	public static String totalPorTipo() {
-		String cadena = "Mamiferos: cant\n" + "Aves: cant\n" + "Reptiles: cant\n" + "Peces: cant\n" + "Anfibios: cant";
+		String cadena = "Mamiferos: "+Mamifero.cantidadMamiferos()+"\n"+"Aves: "+Ave.cantidadAves()+"\n"+
+				"Reptiles: "+Reptil.cantidadReptiles()+"\n"+"Peces: "+Pez.cantidadPeces()+"\n"+"Anfibios: "+
+				Anfibio.cantidadAnfibios();
 		return cadena;
 	}
 	
 	public String toString() {
 		String cadena = "";
 		if (zona == null)
-			cadena = "Mi nombre es " + nombre + ", tengo una edad de " + edad + ", habito en " + habitat +
-			" y mi genero es " + genero;
+			cadena = "Mi nombre es " + getNombre() + ", tengo una edad de " + getEdad() + ", habito en " + getHabitat() +
+			" y mi genero es " + getGenero();
 		else
-			cadena = "Mi nombre es " + nombre + ", tengo una edad de " + edad + ", habito en " + habitat +
-			" y mi genero es " + genero + ", la zona en la que me ubico es " + zona + ", en el " 
-					+ zona[0].getZoo().getNombre();
+			cadena = "Mi nombre es " + getNombre() + ", tengo una edad de " + getEdad() + ", habito en " + getHabitat() +
+					" y mi genero es " + getGenero() + ", la zona en la que me ubico es " + getZona() + ", en el " 
+					+ getZona().getZoo().getNombre();
 		return cadena;
 	}
 	
@@ -104,12 +105,10 @@ public class Animal {
 	}
 	
 	public void setZona(Zona zona) {
-		if (this.zona == null)
-			this.zona = new Zona[1];
-		this.zona[0] = zona;
+		this.zona = zona;
 	}
 	
 	public Zona getZona() {
-		return zona[0];
+		return zona;
 	}
 }

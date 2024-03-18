@@ -61,13 +61,14 @@ public class Zoologico {
 		return ubicacion;
 	}
 	
-	public void setZona(ArrayList<Zona> zonas) {
-		this.zonas = zonas;
+	public void setZona(Zona zonas) {
+		if (this.zonas == null)
+			this.zonas = new ArrayList<Zona>();
+		this.zonas.add(zonas);
 	}
 	
-	public void setZona(Zona zonas) {
-		this.zonas = new ArrayList<Zona>();
-		this.zonas.add(zonas);
+	public void setZona(ArrayList<Zona> zonas) {
+		this.zonas = zonas;
 	}
 	
 	public ArrayList<Zona> getZona() {

@@ -3,11 +3,6 @@ import java.util.ArrayList;
 import gestion.Zona;
 
 public class Anfibio extends Animal{
-	private String nombre;
-	private int edad;
-	private String habitat;
-	private String genero;
-	private Zona[] zona;
 	private static ArrayList<Anfibio> listado;
 	public static int ranas = 0;
 	public static int salamandras = 0;
@@ -15,65 +10,54 @@ public class Anfibio extends Animal{
 	private boolean venenoso;
 	
 	public Anfibio() {
+		this(null, 0, null, null, null, false);
 		listado.add(this);
 	}
 	
 	public Anfibio(String nombre) {
-		this.nombre = nombre;
+		super(nombre);
 		listado.add(this);
 	}
 	
 	public Anfibio(String nombre, int edad) {
-		this.nombre = nombre;;
-		this.edad = edad;
+		super(nombre, edad);
 		listado.add(this);
 	}
 	
 	public Anfibio(String nombre, int edad, String habitat) {
-		this.nombre = nombre;;
-		this.edad = edad;
-		this.habitat = habitat;
+		super(nombre, edad, habitat);
 		listado.add(this);
 	}
 	
 	public Anfibio(String nombre, int edad, String habitat, String genero) {
-		this.nombre = nombre;;
-		this.edad = edad;
-		this.habitat = habitat;
-		this.genero = genero;
+		super(nombre, edad, habitat, genero);
 		listado.add(this);
 	}
 	
 	public Anfibio(String nombre, int edad, String habitat, String genero, String colorPiel) {
-		this.nombre = nombre;;
-		this.edad = edad;
-		this.habitat = habitat;
-		this.genero = genero;
+		super(nombre, edad, habitat, genero);
 		this.colorPiel = colorPiel;
 		listado.add(this);
 	}
 	
 	public Anfibio(String nombre, int edad, String habitat, String genero, String colorPiel, boolean venenoso) {
-		this.nombre = nombre;;
-		this.edad = edad;
-		this.habitat = habitat;
-		this.genero = genero;
+		super(nombre, edad, habitat, genero);
 		this.colorPiel = colorPiel;
 		this.venenoso = venenoso;
 		listado.add(this);
 	}
 	
 	public static Anfibio crearRana(String nombre, int edad, String genero) {
-		ranas += 1;
+		ranas ++;
 		return new Anfibio(nombre, edad, "selva", genero, "rojo", true);
 	}
 	
 	public static Anfibio crearSalamandra(String nombre, int edad, String genero) {
-		salamandras += 1;
+		salamandras ++;
 		return new Anfibio(nombre, edad, "selva", genero, "negro y amarillo", false);
 	}
 	
-	public int cantidadAnfibios() {
+	public static int cantidadAnfibios() {
 		return listado.size();
 	}
 	

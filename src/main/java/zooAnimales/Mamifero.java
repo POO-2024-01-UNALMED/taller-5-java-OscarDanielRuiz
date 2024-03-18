@@ -3,11 +3,6 @@ import java.util.ArrayList;
 import gestion.Zona;
 
 public class Mamifero extends Animal {
-	private String nombre;
-	private int edad;
-	private String habitat;
-	private String genero;
-	private Zona[] zona;
 	private static ArrayList<Mamifero> listado;
 	public static int caballos = 0;
 	public static int leones = 0;
@@ -15,65 +10,54 @@ public class Mamifero extends Animal {
 	private int patas;
 	
 	public Mamifero() {
+		this(null, 0, null, null, false, 0);
 		listado.add(this);
 	}
 	
 	public Mamifero(String nombre) {
-		this.nombre = nombre;
+		super(nombre);
 		listado.add(this);
 	}
 	
 	public Mamifero(String nombre, int edad) {
-		this.nombre = nombre;;
-		this.edad = edad;
+		super(nombre, edad);
 		listado.add(this);
 	}
 	
 	public Mamifero(String nombre, int edad, String habitat) {
-		this.nombre = nombre;;
-		this.edad = edad;
-		this.habitat = habitat;
+		super(nombre, edad, habitat);
 		listado.add(this);
 	}
 	
 	public Mamifero(String nombre, int edad, String habitat, String genero) {
-		this.nombre = nombre;;
-		this.edad = edad;
-		this.habitat = habitat;
-		this.genero = genero;
+		super(nombre, edad, habitat, genero);
 		listado.add(this);
 	}
 	
 	public Mamifero(String nombre, int edad, String habitat, String genero, boolean pelaje) {
-		this.nombre = nombre;;
-		this.edad = edad;
-		this.habitat = habitat;
-		this.genero = genero;
+		super(nombre, edad, habitat, genero);
 		this.pelaje = pelaje;
 		listado.add(this);
 	}
 	
 	public Mamifero(String nombre, int edad, String habitat, String genero, boolean pelaje, int patas) {
-		this.nombre = nombre;;
-		this.edad = edad;
-		this.habitat = habitat;
-		this.genero = genero;
+		super(nombre, edad, habitat, genero);
 		this.pelaje = pelaje;
 		this.patas = patas;
 		listado.add(this);
 	}
 	
 	public static Mamifero crearCaballo(String nombre, int edad, String genero) {
-		caballos += 1;
+		caballos ++;
 		return new Mamifero(nombre, edad, "pradera", genero, true, 4);
 	}
 	
 	public static Mamifero crearLeon(String nombre, int edad, String genero) {
-		leones += 1;
+		leones ++;
 		return new Mamifero(nombre, edad, "selva", genero, true, 4);
 	}
 	
-	public int cantidadMamiferos() {
+	public static int cantidadMamiferos() {
 		return listado.size();
 	}
 	
