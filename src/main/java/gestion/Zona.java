@@ -8,6 +8,7 @@ public class Zona {
 	private ArrayList<Animal> animales = new ArrayList<>();
 	
 	public Zona() {
+		this(null, null);
 	}
 	
 	public Zona(String nombre) {

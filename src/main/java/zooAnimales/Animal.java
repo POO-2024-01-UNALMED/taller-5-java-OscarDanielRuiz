@@ -10,6 +10,7 @@ public class Animal {
 	private Zona zona;
 	
 	public Animal() {
+		this(null, 0, null, null, null);
 		totalAnimales++;
 	}
 	
@@ -110,5 +111,13 @@ public class Animal {
 	
 	public Zona getZona() {
 		return zona;
+	}
+	
+	public static void setTotalAnimales(int total) {
+		totalAnimales = total;
+	}
+	
+	public static int getTotalAnimales() {
+		return totalAnimales;
 	}
 }
